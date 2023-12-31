@@ -5,11 +5,11 @@ Run following command to check and update rsyslog installation.
 **#apt-get install rsyslog -y**
 
 Once the installation is completed, start the Rsyslog service and enable it to start at system reboot:
-#systemctl start rsyslog
-#systemctl enable rsyslog
+**#systemctl start rsyslog
+#systemctl enable rsyslog**
 
 Setup rsyslog server
-#nano /etc/rsyslog.conf
+**#nano /etc/rsyslog.conf**
 
 #provides UDP syslog reception
 module(load="imudp")
