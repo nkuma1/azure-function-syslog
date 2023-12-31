@@ -35,3 +35,37 @@ Select VNET and Subnet and click Connect. \[This integration will be used to rou
 ![](https://33333.cdn.cke-cs.com/kSW7V9NHUXugvhoQeFaf/images/074457d57d0bca06382a1750dfc624821ba64832d02c2e38.png)
 
 You might need to update route table to route traffic depending on your environment.
+
+**Step 3: Deploy Azure Function**
+
+Open Azure Function and Click **Create** 
+
+![](https://33333.cdn.cke-cs.com/kSW7V9NHUXugvhoQeFaf/images/5435a0aab9ee7c367ce8740fd710f4eff579b31e59842c9d.png)
+
+Select HTTP Trigger and click **Create**
+
+![](https://33333.cdn.cke-cs.com/kSW7V9NHUXugvhoQeFaf/images/13f752ec7292de01baacad0efa0f7afec9c5f05d88381e86.png)
+
+Open function. Click Function name “http\_trigger”
+
+![](https://33333.cdn.cke-cs.com/kSW7V9NHUXugvhoQeFaf/images/2312922b852b659e3b7be9db9f4a9085a7623c5d5b617c63.png)
+
+Click Code+Test
+
+![](https://33333.cdn.cke-cs.com/kSW7V9NHUXugvhoQeFaf/images/aa0f28213bc20dfeeb3f2dad72d7eace0b28bcb741857da9.png)
+
+![](https://33333.cdn.cke-cs.com/kSW7V9NHUXugvhoQeFaf/images/d507f4dddcdc1da2d74191adf71d21d6d584a1d5ed36bdb6.png)
+
+Delete Default Code with Azure Function Code and Click on Save.
+
+IMP: SYSLOG\_HOST is your Syslog server IP address
+
+IMP: SYSLOG\_PORT is syslog server port number
+
+Update variables with your syslog server ip address and port number.
+
+![](https://33333.cdn.cke-cs.com/kSW7V9NHUXugvhoQeFaf/images/aeba4dbb9f42464e8ab84d15f7c61bf38cd482f3e5b880d8.png)
+
+Click on Get function URL and copy function URL. This function URL is Prisma Cloud webhook address.
+
+Follow Prisma Cloud documentation link to configure webhook integration in Prisma Cloud console.
