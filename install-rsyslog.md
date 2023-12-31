@@ -1,41 +1,43 @@
-In this example, we will install rsyslog server on ubuntu 20.04. rsyslog server is installed by default on ubuntu server.
+## Install rsyslog server on ubuntu server to test Azure Function.
 
-Run following command to check and update rsyslog installation. 
+Note: rsyslog server is installed by default on ubuntu server version 20.04.
 
-**#apt-get install rsyslog -y**
+1\. Run following command to check and update rsyslog installation. 
 
-Once the installation is completed, start the Rsyslog service and enable it to start at system reboot: 
+ **#apt-get install rsyslog -y**
 
-**#systemctl start rsyslog** 
+2\. Once the installation is completed, start the Rsyslog service and enable it to start at system reboot: 
 
-**#systemctl enable rsyslog**
+ **#systemctl start rsyslog**
 
-Setup rsyslog server 
+ **#systemctl enable rsyslog**
 
-**\# provides UDP syslog reception**
+3\. Setup rsyslog server 
 
-module(load="imudp")
+ **# provides UDP syslog reception**
 
-input(type="imudp" port="514")
+   module(load="imudp")
 
-**\# provides TCP syslog reception**
+   input(type="imudp" port="514")
 
-module(load="imtcp")
+ **# provides TCP syslog reception**
 
-input(type="imtcp" port="514")
+   module(load="imtcp")
 
-Add the following line to receive and store incoming syslog messages: 
+   input(type="imtcp" port="514")
 
-**$template RemInputLogs, "/var/log/remotelogs/%FROMHOST-IP%/%PROGRAMNAME%.log"**
+4\. Add the following line to receive and store incoming syslog messages: 
 
-**\*.\* ?RemInputLogs**
+ **$template RemInputLogs, "/var/log/remotelogs/%FROMHOST-IP%/%PROGRAMNAME%.log"**
 
-**\# systemctl restart rsyslog**
+ **\*.\* ?RemInputLogs**
 
-**\# systemctl status rsyslog**
+ **# systemctl restart rsyslog**
 
-Turn off repeated msg:
+ **# systemctl status rsyslog**
 
-**$RepeatedMsgReduction on # do not log repeated messages**
+5\. (Optional) Turn off repeated msg:
 
-**$RepeatedMsgReduction on # do not log repeated messages**
+ **$RepeatedMsgReduction on # do not log repeated messages**
+
+ **$RepeatedMsgReduction on # do not log repeated messages**
