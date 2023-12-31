@@ -1,8 +1,8 @@
 In this example, we will install rsyslog server on ubuntu 20.04.
 rsyslog server is installed by default on ubuntu server.
 
-Run following command to check and update rsyslog installation.\n
-#apt-get install rsyslog -y
+Run following command to check and update rsyslog installation.
+**#apt-get install rsyslog -y**
 
 Once the installation is completed, start the Rsyslog service and enable it to start at system reboot:
 #systemctl start rsyslog
