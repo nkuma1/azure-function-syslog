@@ -1,4 +1,6 @@
-**Use Case:** Customer SIEM/Syslog Server is running inside on-premise data center. 
+Version: _1.0_ Author: _Naveen Kumar_
+
+## Use Case: The Purpose of this Azure Function is to send Prisma Cloud Alerts to Customer on-premises SIEM/Syslog Server using webhook integration.
 
 **Function Architecture:** Setup Azure Function in App Service Plan to integrate Azure Function with Virtual Network.  
 
